@@ -28,14 +28,16 @@ The system employs a group chat architecture managed by a central coordinator.
 ### How the Communication happens between Agents
 - First User query pass into User Intake Agent Receives employee requests (e.g., 'I can't access my email'). Extracts key details and assigns the request to the resolution agent.
 
-- After assigning the appropriate agent the agent try solve the query of employee for example: In our case Resolution Agent based upon the user query it will check into the knowledge base then give response
+- After assigning the appropriate agent the agent try solve the query of employee for example: In our case Resolution Agent based upon the user query it will check into the knowledge base (could be any thing VectorDB or normal txt file) then give response
 Attempts to resolve common issues using a predefined knowledge base and function calls
 (e.g., resetting a password). 
 
 - If the issue is too complex, it escalates the request.Generates a structured summary for
 IT support and triggers a notification.
 
-- All agent communicate via Group chat and Master Agnet keep on eye on all agents.
+- Escalation Agent Try to solve complex query if not able to solve then Generates a ticket and raise then send to human IT Support and get involve with team and END the chat with Terminate Message.
+
+- All agent communicate via Group chat share all information with each other and Master Agnet keep on eye on all agents.
 
 ### How to Run this 
 ```
